@@ -20,6 +20,7 @@ class RecordsController < ApplicationController
 
   # GET /records/1/edit
   def edit
+    authorize! :manage, @record
   end
 
   # POST /records
@@ -41,6 +42,7 @@ class RecordsController < ApplicationController
   # PATCH/PUT /records/1
   # PATCH/PUT /records/1.json
   def update
+    authorize! :manage, @record
     respond_to do |format|
       if @record.update(record_params)
         format.html { redirect_to @record, notice: 'Record was successfully updated.' }
@@ -55,6 +57,7 @@ class RecordsController < ApplicationController
   # DELETE /records/1
   # DELETE /records/1.json
   def destroy
+    authorize! :manage, @record
     @record.destroy
     respond_to do |format|
       format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }

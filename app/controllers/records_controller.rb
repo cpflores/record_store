@@ -1,4 +1,5 @@
 class RecordsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   # GET /records
@@ -24,7 +25,7 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    @record = Record.new(record_params)
+    @record = current_user.records.new(record_params)
 
     respond_to do |format|
       if @record.save

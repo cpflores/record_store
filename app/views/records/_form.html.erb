@@ -1,16 +1,14 @@
-<%= simple_form_for(@record) do |f| %>
+<%= simple_form_for(@record, html: {class: "form-signin"}) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :artist %>
-    <%= f.input :year %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :availability %>
+  <%= f.input :name, required: true, label: false, placeholder: "Name", input_html: {class: "form-control"} %>
+  <%= f.input :artist, required: true, label: false, placeholder: "Artist", input_html: {class: "form-control"} %>
+  <%= f.input :year, required: true, label: false, placeholder: "Year", input_html: {class: "form-control"} %>
+  <%= f.input :description, required: true, label: false, placeholder: "Description", input_html: {class: "form-control"} %>
+  <br>
+  <%= f.input :price, required: true, label: false, placeholder: "Price", input_html: {class: "form-control"} %>
+  <div class="checkbox text-center">
+    <p>Availability</p>
+    <%= f.input :availability, required: false, label: false %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, class: "btn btn-primary btn-block" %>
 <% end %>

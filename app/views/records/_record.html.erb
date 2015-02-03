@@ -1,0 +1,9 @@
+<div class="col-md-3">
+  <div class="thumbnail">
+    <%= image_tag "record.jpg", class: "img-responsive" %>
+    <div class="caption">
+      <p><strong><%= record.name %> by <%= record.artist %></strong></p>
+      <p>$<%= record.price.to_f / 100 %></p>
+    </div>
+  </div>
+</div>

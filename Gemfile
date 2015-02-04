@@ -34,6 +34,7 @@ gem 'paperclip', '~> 4.2.1'
 gem 'dotenv-rails', '~> 1.0.2', group: :development
 gem 'aws-sdk', '~> 1.61.0'
 gem 'friendly_id', '~> 5.1.0'
+gem 'stripe', '~> 1.18.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

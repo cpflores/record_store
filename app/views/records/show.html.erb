@@ -6,6 +6,18 @@
     <h3><%= @record.name %> by <%= @record.artist %></h3>
     <p><%= @record.description %></p>
     <h4 class="text-center">$<%= @record.price.to_f / 100 %></h4>
+  
+    <%= form_tag buy_path(slug: @record.slug) do %>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-amount="<%= @record.price %>"
+        data-name="Record Store"
+        data-description="<%= @record.name %> by <%= @record.artist %>"
+        data-email="<%= current_user.email %>">
+      </script>
+    <% end %>
+
   </div>
 </div>
 

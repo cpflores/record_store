@@ -68,6 +68,8 @@ GEM
       dotenv (= 1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -177,6 +179,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise (~> 3.4.1)
   dotenv-rails (~> 1.0.2)
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.2.1)

@@ -1,8 +1,10 @@
 <div class="col-md-3">
   <div class="thumbnail">
-    <%= image_tag "record.jpg", class: "img-responsive" %>
+    <%= link_to record_path(record) do %>
+      <%= image_tag record.image.url(:original), class: "img-responsive" %>
+    <% end %>
     <div class="caption">
-      <p><strong><%= record.name %> by <%= record.artist %></strong></p>
+      <p><strong><%= link_to record.name, record_path(record) %> by <%= record.artist %></strong></p>
       <p>$<%= record.price.to_f / 100 %></p>
     </div>
   </div>

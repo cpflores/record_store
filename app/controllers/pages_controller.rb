@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     if current_user
       redirect_to records_path
     end
+    @records = Record.last(8)
   end
 
   def dashboard

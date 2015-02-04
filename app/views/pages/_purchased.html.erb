@@ -1,0 +1,18 @@
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @purchased.each do |sale| %>
+      <tr>
+        <td><%= link_to sale.record.name, pickup_path(sale.guid) %></td>
+        <td><%= sale.record.artist %></td>
+        <td><%= time_ago_in_words(sale.created_at) %> ago</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

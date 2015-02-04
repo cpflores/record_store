@@ -10,5 +10,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @records = current_user.records
+    @purchased = Sale.where(buyer_email: current_user.email)
+    @sales = Sale.where(seller_email: current_user.email)
   end
 end

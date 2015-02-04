@@ -1,0 +1,20 @@
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Available</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= link_to record.name, record_path(record) %></td>
+        <td><%= record.artist %></td>
+        <td><%= record.availability %></td>
+        <td><%= link_to "Edit", edit_record_path(record) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

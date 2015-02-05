@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @purchased.each do |sale| %>
+    <% @sales.each do |sale| %>
       <tr>
         <td><%= link_to sale.record.name, pickup_path(sale.guid) %></td>
         <td><%= sale.record.artist %></td>

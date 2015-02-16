@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204152227) do
+ActiveRecord::Schema.define(version: 20150216221830) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 20150204152227) do
     t.string   "stripe_token"
     t.text     "error"
     t.integer  "amount"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "artist"
+    t.integer  "year"
+    t.text     "description"
+    t.integer  "min_price"
+    t.integer  "max_price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

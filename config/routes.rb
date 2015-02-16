@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :records
+  resources :searches
   devise_for :users
   root 'pages#home'
 

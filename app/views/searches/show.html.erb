@@ -1,0 +1,20 @@
+<h1>Search Results</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_records.empty? %>
+  <p>No records found. Try again to find a record you will love.</p>
+<% else %>
+  <% @search.search_records.each do |c| %>
+  <br>
+
+  <div class="div">
+    <h1><%= c.name %></h1>
+    <p>Artist: <%= c.artist %></p>
+    <p>Year: <%= c.year %></p>
+    <p>Description: <%= c.description %></p>
+    <p>Price: <%= c.price %></p>
+  </div>
+  
+  <% end %>
+<% end %>

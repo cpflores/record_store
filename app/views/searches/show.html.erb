@@ -5,15 +5,14 @@
 <% if @search.search_records.empty? %>
   <p>No records found. Try again to find a record you will love.</p>
 <% else %>
-  <% @search.search_records.each do |c| %>
+  <% @search.search_records.each do |search| %>
   <br>
-
   <div class="div">
-    <h1><%= link_to record.name, record_path(record)c.name %></h1>
-    <p>Artist: <%= c.artist %></p>
-    <p>Year: <%= c.year %></p>
-    <p>Description: <%= c.description %></p>
-    <p>Price: <%= c.price %></p>
+    <h2><%= search.name %></h2>
+    <p>Artist: <%= search.artist %></p>
+    <p>Year: <%= search.year %></p>
+    <p>Description: <%= search.description %></p>
+    <p>Price: <%= search.price.to_f / 100 %></p>
   </div>
   
   <% end %>

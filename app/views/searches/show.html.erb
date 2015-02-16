@@ -9,7 +9,7 @@
   <br>
 
   <div class="div">
-    <h1><%= c.name %></h1>
+    <h1><%= link_to record.name, record_path(record)c.name %></h1>
     <p>Artist: <%= c.artist %></p>
     <p>Year: <%= c.year %></p>
     <p>Description: <%= c.description %></p>

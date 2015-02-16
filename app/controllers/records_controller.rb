@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.where(availability: true).where(["name LIKE ?","%#{params[:search]}%"])
+    @records = Record.where(availability: true).search(params[:search])
   end
 
   # GET /records/1

@@ -20,4 +20,12 @@ class Record < ActiveRecord::Base
   # validates :resource, attachment_presence: true
   validates_numericality_of :price, 
   greater_than: 49, message: "Must be at least 50 cents"
+
+  def self.search(search)
+    if search
+      where(["name LIKE ?","%#{search}%"])
+    else
+      all
+    end
+  end
 end
